@@ -11,6 +11,10 @@
   --menu-item: rgba(43, 46, 72, 1);
   --unit-bg2: rgba(243, 242, 252, 1);
   --additional: rgba(249, 131, 124, 1);
+  --search-border: rgba(220, 220, 221, 1);
+  --search-bg: rgba(255, 255, 255, 1);
+  --search-icon: rgba(125, 125, 125, 1);
+  --avatar-shadow: rgba(230, 229, 249, 1);
 }
 
 .dark {
@@ -26,4 +30,8 @@
   --menu-item: rgba(184, 192, 204, 1);
   --unit-bg2: rgba(38, 44, 54, 1);
   --additional: rgba(249, 131, 124, 1);
+  --search-border: rgba(38, 44, 54, 1);
+  --search-bg: rgba(38, 44, 54, 1);
+  --search-icon: rgba(87, 103, 118, 1);
+  --avatar-shadow: rgba(184, 192, 204, 1);
 }
