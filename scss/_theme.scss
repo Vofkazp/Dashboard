@@ -1,0 +1,29 @@
+.light {
+  --light-bg: rgba(241, 243, 244, 1);
+  --unit-bg: rgba(255, 255, 255, 1);
+  --highlight-primary: rgba(123, 87, 224, 1);
+  --base-primary: rgba(43, 46, 72, 1);
+  --base-secondary: rgba(125, 125, 125, 1);
+  --error: rgba(199, 16, 38, 1);
+  --success: rgba(11, 138, 0, 1);
+  --btn-bg: rgba(230, 229, 249, 1);
+  --origin-color: rgba(0, 0, 0, 1);
+  --menu-item: rgba(43, 46, 72, 1);
+  --unit-bg2: rgba(243, 242, 252, 1);
+  --additional: rgba(249, 131, 124, 1);
+}
+
+.dark {
+  --light-bg: rgba(13, 15, 17, 1);
+  --unit-bg: rgba(25, 29, 35, 1);
+  --highlight-primary: rgba(123, 87, 224, 1);
+  --base-primary: rgba(227, 227, 227, 1);
+  --base-secondary: rgba(184, 192, 204, 1);
+  --error: rgba(245, 59, 48, 1);
+  --success: rgba(42, 163, 31, 1);
+  --btn-bg: rgba(25, 29, 35, 1);
+  --origin-color: rgba(255, 255, 255, 1);
+  --menu-item: rgba(184, 192, 204, 1);
+  --unit-bg2: rgba(38, 44, 54, 1);
+  --additional: rgba(249, 131, 124, 1);
+}
