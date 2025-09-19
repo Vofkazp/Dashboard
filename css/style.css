@@ -37,6 +37,10 @@
   --light-yellow: rgba(255, 197, 101, 1);
   --select: rgba(241, 243, 244, 1);
   --select-text: rgba(43, 46, 72, 1);
+  --is-tooday: rgba(43, 46, 72, 1);
+  --is-tooday-text: rgba(255, 255, 255, 1);
+  --btn-border: rgba(220, 220, 221, 1);
+  --scroll-bar: rgb(166, 166, 166);
 }
 
 .dark {
@@ -63,6 +67,10 @@
   --light-yellow: rgba(239, 176, 71, 1);
   --select: rgba(38, 44, 54, 1);
   --select-text: rgba(184, 192, 204, 1);
+  --is-tooday: rgba(38, 44, 54, 1);
+  --is-tooday-text: rgba(227, 227, 227, 1);
+  --btn-border: rgba(87, 103, 118, 1);
+  --scroll-bar: rgb(85, 85, 85);
 }
 
 * {
@@ -224,16 +232,31 @@ ul, ol {
 }
 
 .main {
-  padding: 0 24px;
+  padding: 0 24px 24px;
+  height: 100vh;
+  overflow-y: auto;
+}
+.main::-webkit-scrollbar {
+  width: 8px;
+}
+.main::-webkit-scrollbar-track {
+  background: var(--light-bg);
+}
+.main::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar);
+  border-radius: 20px;
 }
 
 .header {
+  position: sticky;
+  top: 0;
   padding: 20px 24px;
   border-radius: 8px;
   background-color: var(--unit-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 0 5px 2px var(--light-bg);
 }
 .header .search-block {
   position: relative;
@@ -408,22 +431,6 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
 }
-.row .card .card-link .link {
-  display: block;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  color: rgb(123, 87, 224);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M6 12L10 8L6 4' fill-rule='nonzero' stroke='rgb(123,87,224)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' /%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 16px 16px;
-  padding-right: 24px;
-  cursor: pointer;
-}
 .row .card .card-link .chip {
   padding: 3px 5px 3px 22px;
   border-radius: 50px;
@@ -442,7 +449,8 @@ ul, ol {
   color: var(--error);
   background-color: var(--chip-error);
 }
-.row .card .card-link .select {
+
+.select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -467,6 +475,210 @@ ul, ol {
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 1fr;
   grid-gap: 24px;
+}
+.main-grid .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-grid .card-header .header-title {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 100%;
+  color: var(--base-primary);
+}
+.main-grid .analytic-block {
+  margin-top: 16px;
+  height: 360px;
+}
+.main-grid .calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
+}
+.main-grid .calendar .calendar-title {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 100%;
+  color: var(--base-primary);
+}
+.main-grid .calendar .calendar-header {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+.main-grid .calendar .calendar-header .date-name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--base-secondary);
+}
+.main-grid .calendar .calendar-header .is-today {
+  display: block;
+  padding: 3px 7px;
+  margin-left: 8px;
+  border-radius: 300px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  background-color: var(--is-tooday);
+  color: var(--is-tooday-text);
+}
+.main-grid .calendar .calendar-header .button-block {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.main-grid .calendar .calendar-header .button-block .left-btn, .main-grid .calendar .calendar-header .button-block .right-btn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.main-grid .calendar .message-block {
+  margin-top: 20px;
+}
+.main-grid .calendar .message-block .message-item {
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid var(--btn-border);
+}
+.main-grid .calendar .message-block .message-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+.main-grid .calendar .message-block .message-item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  bottom: -1px;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.main-grid .calendar .message-block .message-item.purple:before {
+  background-color: var(--highlight-primary);
+}
+.main-grid .calendar .message-block .message-item.green:before {
+  background-color: var(--light-green);
+}
+.main-grid .calendar .message-block .message-item.blue:before {
+  background-color: var(--light-blue);
+}
+.main-grid .calendar .message-block .message-item.yellow:before {
+  background-color: var(--light-yellow);
+}
+.main-grid .calendar .message-block .message-item .message-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--base-primary);
+}
+.main-grid .calendar .message-block .message-item .message-time {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-top: 5px;
+  color: var(--base-secondary);
+}
+.main-grid .calendar .calendar-footer {
+  position: relative;
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-grid .calendar .calendar-footer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -24px;
+  width: calc(100% + 48px);
+  height: 2px;
+  background-color: var(--light-bg);
+}
+
+.orders {
+  margin-top: 24px;
+}
+.orders .orders-title {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 25px;
+  color: var(--base-primary);
+}
+.orders .orders-table {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+}
+.orders .orders-table thead {
+  background-color: var(--select);
+}
+.orders .orders-table thead th {
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: var(--base-secondary);
+}
+.orders .orders-table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--btn-border);
+}
+.orders .orders-table tbody tr td {
+  padding: 16px 14px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: var(--base-primary);
+}
+.orders .orders-table tbody tr td .status {
+  display: block;
+  position: relative;
+  padding-left: 16px;
+}
+.orders .orders-table tbody tr td .status::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.orders .orders-table tbody tr td .status.pend::before {
+  background-color: var(--light-yellow);
+}
+.orders .orders-table tbody tr td .status.credit::before {
+  background-color: var(--success);
+}
+
+.link {
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(123, 87, 224);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M6 12L10 8L6 4' fill-rule='nonzero' stroke='rgb(123,87,224)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 16px 16px;
+  padding-right: 24px;
+  cursor: pointer;
 }
 
 .dark .main .header .right-block .theme {

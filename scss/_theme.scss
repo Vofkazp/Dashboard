@@ -22,6 +22,10 @@
   --light-yellow: rgba(255, 197, 101, 1);
   --select: rgba(241, 243, 244, 1);
   --select-text: rgba(43, 46, 72, 1);
+  --is-tooday: rgba(43, 46, 72, 1);
+  --is-tooday-text: rgba(255, 255, 255, 1);
+  --btn-border: rgba(220, 220, 221, 1);
+  --scroll-bar: rgb(166, 166, 166);
 }
 
 .dark {
@@ -48,4 +52,8 @@
   --light-yellow: rgba(239, 176, 71, 1);
   --select: rgba(38, 44, 54, 1);
   --select-text: rgba(184, 192, 204, 1);
+  --is-tooday: rgba(38, 44, 54, 1);
+  --is-tooday-text: rgba(227, 227, 227, 1);
+  --btn-border: rgba(87, 103, 118, 1);
+  --scroll-bar: rgb(85, 85, 85);
 }

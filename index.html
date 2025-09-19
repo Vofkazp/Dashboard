@@ -251,8 +251,118 @@
     </div>
   </div>
   <div class="main-grid">
-    <div class="card"></div>
-    <div class="card"></div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="header-title">Revenue analytics</h3>
+        <label>
+          <select name="month2" class="select">
+            <option value="1" selected>Year</option>
+            <option value="2">Month</option>
+            <option value="3">Day</option>
+          </select>
+        </label>
+      </div>
+      <div class="analytic-block"></div>
+    </div>
+    <div class="card calendar">
+      <h3 class="calendar-title">Calendar</h3>
+      <div class="calendar-header">
+        <p class="date-name">Aug 10, Mon</p>
+        <span class="is-today">TODAY</span>
+        <div class="button-block">
+          <button class="left-btn">
+            <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none">
+              <g>
+                <path
+                    d="M1.33807 0.229221L7.25005 6.13203L1.33807 12.0348C1.03197 12.3405 0.535679 12.3405 0.229577 12.0348C-0.0765256 11.7292 -0.0765256 11.2337 0.229577 10.9281L5.14222 6.13043L0.229577 1.336C-0.0765256 1.03037 -0.0765256 0.534849 0.229577 0.229221C0.535679 -0.0764069 1.03197 -0.0764069 1.33807 0.229221Z"
+                    fill="var(--base-secondary)" fill-rule="evenodd" transform="matrix(-1,0,0,1,15.6304,6.39301)"/>
+              </g>
+              <path
+                  d="M19.8261 0C22.1313 0 24 1.86872 24 4.17391L24 19.8261C24 22.1313 22.1313 24 19.8261 24L4.17391 24C1.86872 24 0 22.1313 0 19.8261L0 4.17391C0 1.86872 1.86872 0 4.17391 0L19.8261 0Z"
+                  stroke="var(--btn-border)" stroke-width="1" transform="matrix(-1,0,0,1,24.5,0.5)"/>
+            </svg>
+          </button>
+          <button class="right-btn">
+            <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none">
+              <g>
+                <path
+                    d="M10.7077 6.62223L16.6197 12.525L10.7077 18.4278C10.4016 18.7335 9.90531 18.7335 9.59921 18.4278C9.2931 18.1222 9.2931 17.6267 9.59921 17.3211L14.5118 12.5234L9.59921 7.729C9.2931 7.42337 9.2931 6.92785 9.59921 6.62223C9.90531 6.3166 10.4016 6.3166 10.7077 6.62223Z"
+                    fill="var(--base-secondary)" fill-rule="evenodd"/>
+              </g>
+              <path
+                  d="M20.3261 0.5C22.6313 0.5 24.5 2.36872 24.5 4.67391L24.5 20.3261C24.5 22.6313 22.6313 24.5 20.3261 24.5L4.67391 24.5C2.36872 24.5 0.5 22.6313 0.5 20.3261L0.5 4.67391C0.5 2.36872 2.36872 0.5 4.67391 0.5L20.3261 0.5Z"
+                  stroke="var(--btn-border)" stroke-width="1"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="message-block">
+        <div class="message-item green">
+          <p class="message-title">Summer Campaign is end!</p>
+          <p class="message-time">16:00</p>
+        </div>
+        <div class="message-item yellow">
+          <p class="message-title">2 plus 1 promotions is end!</p>
+          <p class="message-time">14:00</p>
+        </div>
+        <div class="message-item blue">
+          <p class="message-title">Winter Campaign is end!</p>
+          <p class="message-time">13:00</p>
+        </div>
+        <div class="message-item purple">
+          <p class="message-title">Summer Campaign is end!</p>
+          <p class="message-time">09:00</p>
+        </div>
+      </div>
+      <div class="calendar-footer">
+        <button class="link">See full calendar</button>
+      </div>
+    </div>
+  </div>
+  <div class="card orders">
+    <h3 class="orders-title">Recent orders</h3>
+    <table class="orders-table">
+      <thead>
+      <tr>
+        <th>No.</th>
+        <th>Date/Time</th>
+        <th>Customer</th>
+        <th>Items</th>
+        <th>Paid</th>
+        <th>Status</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>#00126</td>
+        <td>05-04-2023</td>
+        <td>Robert Johnson</td>
+        <td>4 items</td>
+        <td>Yes</td>
+        <td><span class="status pend">Pending</span></td>
+        <td>$2,455.00</td>
+      </tr>
+      <tr>
+        <td>#00125</td>
+        <td>04-04-2023</td>
+        <td>Robert Johnson</td>
+        <td>2 items</td>
+        <td>Yes</td>
+        <td><span class="status pend">Pending</span></td>
+        <td>$1,254.00</td>
+      </tr>
+      <tr>
+        <td>#00124</td>
+        <td>03-04-2023</td>
+        <td>Robert Johnson</td>
+        <td>4 items</td>
+        <td>Yes</td>
+        <td><span class="status credit">Credited</span></td>
+        <td>$2,455.00</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </main>
 <script src="script.js"></script>
