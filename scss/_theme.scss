@@ -15,6 +15,13 @@
   --search-bg: rgba(255, 255, 255, 1);
   --search-icon: rgba(125, 125, 125, 1);
   --avatar-shadow: rgba(230, 229, 249, 1);
+  --chip-success: rgba(11, 138, 0, 0.15);
+  --chip-error: rgba(199, 16, 38, 0.15);
+  --light-green: rgba(80, 192, 153, 1);
+  --light-blue: rgba(93, 170, 238, 1);
+  --light-yellow: rgba(255, 197, 101, 1);
+  --select: rgba(241, 243, 244, 1);
+  --select-text: rgba(43, 46, 72, 1);
 }
 
 .dark {
@@ -34,4 +41,11 @@
   --search-bg: rgba(38, 44, 54, 1);
   --search-icon: rgba(87, 103, 118, 1);
   --avatar-shadow: rgba(184, 192, 204, 1);
+  --chip-success: rgba(42, 163, 31, 0.15);
+  --chip-error: rgba(245, 59, 48, 0.15);
+  --light-green: rgba(71, 167, 133, 1);
+  --light-blue: rgba(83, 149, 207, 1);
+  --light-yellow: rgba(239, 176, 71, 1);
+  --select: rgba(38, 44, 54, 1);
+  --select-text: rgba(184, 192, 204, 1);
 }
