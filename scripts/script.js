@@ -8,7 +8,7 @@ minimized.addEventListener("click", () => {
 });
 
 theme.addEventListener("click", () => {
-  if(body.classList.contains("dark")) {
+  if (body.classList.contains("dark")) {
     body.classList.remove("dark");
     body.classList.add("light");
   } else {

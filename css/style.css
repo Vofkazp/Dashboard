@@ -257,6 +257,7 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 5px 2px var(--light-bg);
+  z-index: 999;
 }
 .header .search-block {
   position: relative;
